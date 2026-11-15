@@ -21,7 +21,12 @@
   --sans: "Inter Tight", system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --pad-x: clamp(20px, 4vw, 56px);
+  /* Side padding. On screens wider than the 1440px design, the padding grows
+     instead of the content, so content stops at 1328px wide and stays centred.
+     Backgrounds still run edge to edge. 100% is the width of the full-width
+     parent (body, or the viewport for the fixed menu). */
+  --content-max: 1328px;
+  --pad-x: max(clamp(20px, 4vw, 56px), calc((100% - var(--content-max)) / 2));
   /* fluid: 64px -> 96px */
   --section-space: clamp(64px, calc(64px + 32 * (100vw - 390px) / 510), 96px);
   --edge-bar: 3px;
@@ -161,7 +166,7 @@ img {
 
 @media (min-width: 900px) {
   .heading {
-    font-size: clamp(40px, 4.8vw, 72px);
+    font-size: clamp(40px, 4.8vw, 69.12px);
   }
 }
 
@@ -514,11 +519,11 @@ img {
   }
 
   .hero h1 {
-    font-size: clamp(64px, 12vw, 184px);
+    font-size: clamp(64px, 12vw, 172.8px);
   }
 
   .tagline {
-    font-size: clamp(20px, 2vw, 30px);
+    font-size: clamp(20px, 2vw, 28.8px);
     line-height: 1.25;
     letter-spacing: -0.015em;
   }
@@ -627,7 +632,7 @@ img {
   }
 
   .latest h2 {
-    font-size: clamp(52px, 7vw, 112px);
+    font-size: clamp(52px, 7vw, 100.8px);
     line-height: 0.9;
   }
 
@@ -714,7 +719,7 @@ img {
 
 .game h3 {
   font-weight: 800;
-  font-size: clamp(28px, 2.4vw, 36px);
+  font-size: clamp(28px, 2.4vw, 34.56px);
   line-height: 1;
   letter-spacing: -0.04em;
 }
@@ -896,7 +901,7 @@ details[open] .faq-plus {
   }
 
   .mail {
-    font-size: clamp(30px, 4.4vw, 64px);
+    font-size: clamp(30px, 4.4vw, 63.36px);
     line-height: 1;
     letter-spacing: -0.04em;
   }
