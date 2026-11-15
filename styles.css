@@ -437,8 +437,11 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  /* fluid: 600px -> 720px */
-  min-height: clamp(600px, calc(600px + 120 * (100vw - 390px) / 510), 720px);
+  /* Fills the window exactly. svh is the window height with a phone's browser
+     bars showing, so the intro doesn't jump when they hide while scrolling.
+     If the window is too short for the text, the intro grows to fit it. */
+  min-height: 100vh;
+  min-height: 100svh;
   padding: clamp(120px, calc(120px + 40 * (100vw - 390px) / 510), 160px) var(--pad-x) clamp(44px, calc(44px + 20 * (100vw - 390px) / 510), 64px);
   overflow: hidden;
 }
