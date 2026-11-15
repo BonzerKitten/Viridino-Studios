@@ -4,9 +4,263 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Viridino Studios</title>
+  <meta name="description" content="Viridino Studios: retro aesthetic, modern game design. Two friends making games.">
+  <meta name="theme-color" content="#111311">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <h1>Viridino Studios</h1>
-  <p>Buy me game please.</p>
+  <!-- Ink to Stone gradient map for the intro photo -->
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <filter id="gm-hero" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0  0.2126 0.7152 0.0722 0 0  0.2126 0.7152 0.0722 0 0  0 0 0 1 0"/>
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="0.0667 0.3333"/>
+        <feFuncG type="table" tableValues="0.0745 0.3451"/>
+        <feFuncB type="table" tableValues="0.0667 0.3098"/>
+      </feComponentTransfer>
+    </filter>
+  </svg>
+
+  <header class="topbar">
+    <a class="brand" href="#top">
+      <img src="assets/images/logo-placeholder.jpg" alt="">
+      <span>Viridino Studios</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#latest">Latest</a>
+      <a href="#team">Team</a>
+      <a href="#games">Games</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <nav class="menu" id="menu" aria-label="Main" hidden>
+    <div class="menu-head">
+      <span>Menu</span>
+      <button class="menu-close" type="button" aria-label="Close menu">×</button>
+    </div>
+    <ul class="menu-links">
+      <li><a href="#latest">Latest <span class="num" aria-hidden="true">01</span></a></li>
+      <li><a href="#team">Team <span class="num" aria-hidden="true">02</span></a></li>
+      <li><a href="#games">Games <span class="num" aria-hidden="true">03</span></a></li>
+      <li><a href="#faq">FAQ <span class="num" aria-hidden="true">04</span></a></li>
+      <li><a href="#contact">Contact <span class="num" aria-hidden="true">05</span></a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="top">
+    <img class="hero-img" src="assets/images/intro-background.jpg" alt="" fetchpriority="high">
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="glow-line" aria-hidden="true"></div>
+    <div class="hero-text">
+      <h1>Viridino<br>Studios<span class="dot">.</span></h1>
+      <p class="tagline">Retro aesthetic. <br><span class="green">Modern game design.</span></p>
+    </div>
+  </section>
+
+  <main>
+    <section class="section latest" id="latest" aria-labelledby="latest-title">
+      <p class="label"><span class="num">01</span> / Latest game</p>
+      <div class="frame zoom latest-frame">
+        <img src="assets/images/the-ferrymans-trial.jpg" alt="The Ferryman’s Trial key art">
+      </div>
+      <div class="latest-info">
+        <div class="latest-title-block">
+          <span class="status">Out now on Steam</span>
+          <h2 id="latest-title">The Ferryman’s Trial</h2>
+        </div>
+        <div class="latest-copy">
+          <p class="hook">Death is searching for a successor.</p>
+          <p class="body-text">To claim his mantle, you must judge the souls of the dead during a surprisingly short, strange and unsettling job interview where every choice shapes the fate of humanity, including your own.</p>
+          <a class="btn btn-main" href="https://store.steampowered.com/app/4769580/">Buy on Steam<svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section divided" id="team" aria-labelledby="team-title">
+      <div class="section-head">
+        <p class="label"><span class="num">02</span> / The team</p>
+        <h2 class="heading" id="team-title">Two friends.<br><span class="green">Infinite games.</span></h2>
+      </div>
+      <div class="section-body team-grid">
+        <div class="member">
+          <div class="frame">
+            <img src="assets/images/team-mateus.jpg" alt="Mateus Moreira" loading="lazy">
+          </div>
+          <div class="member-text">
+            <h3>Mateus Moreira</h3>
+            <span class="label">Co-founder</span>
+          </div>
+        </div>
+        <div class="member">
+          <!-- Empty until Felipe's own illustration arrives. -->
+          <div class="frame" aria-hidden="true"></div>
+          <div class="member-text">
+            <h3>Felipe Calderan</h3>
+            <span class="label">Co-founder</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section divided" id="games" aria-labelledby="games-title">
+      <div class="section-head">
+        <p class="label"><span class="num">03</span> / The catalogue</p>
+        <h2 class="heading" id="games-title">More games</h2>
+      </div>
+      <div class="section-body games-grid">
+        <article class="game">
+          <div class="frame zoom"><img src="assets/images/morra-3d.jpg" alt="MORRA 3D key art" loading="lazy"></div>
+          <span class="status">In development</span>
+          <h3>MORRA 3D</h3>
+          <p>MORRA 3D is a classic boomer shooter about battling restless creatures with high-caliber guns and an ever changing storm inside of you.</p>
+          <div class="links">
+            <a class="btn btn-store" href="https://store.steampowered.com/app/4068100/">Wishlist on Steam<svg class="arrow" width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5"/></svg></a>
+          </div>
+        </article>
+
+        <article class="game">
+          <div class="frame zoom"><img src="assets/images/cold-husk.jpg" alt="COLD HUSK key art" loading="lazy"></div>
+          <span class="status">In development</span>
+          <h3>COLD HUSK</h3>
+          <p>A research station spans the Moon’s surface, humanity’s last monument to forbidden DNA experimentation. Read the final thoughts of deceased crew members, uncover a species-ending catastrophe, and navigate cold metallic corridors using only terminal commands. In COLD HUSK, knowledge is power.</p>
+          <div class="links">
+            <a class="btn btn-store" href="https://store.steampowered.com/app/4416140/">Wishlist on Steam<svg class="arrow" width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5"/></svg></a>
+          </div>
+        </article>
+
+        <article class="game">
+          <div class="frame zoom"><img src="assets/images/steel-defier.jpg" alt="Steel Defier key art" loading="lazy"></div>
+          <span class="status">Out now · 2023</span>
+          <h3>Steel Defier</h3>
+          <p>Are you ready to escape from your tight prison cell? A malfunction in the defense system of a transport spaceship accidentally killed everyone aboard, except for one last survivor… You and your suspiciously orange suit.</p>
+          <div class="links">
+            <a class="btn btn-store" href="https://store.steampowered.com/app/1918240/">Steam<svg class="arrow" width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5"/></svg></a>
+          </div>
+        </article>
+
+        <article class="game">
+          <div class="frame zoom"><img src="assets/images/gardeners-path.jpg" alt="Gardener’s Path key art" loading="lazy"></div>
+          <span class="status">Out now · 2021</span>
+          <h3>Gardener’s Path</h3>
+          <p>Gardener’s Path is a top-down turn-based puzzle game, about fighting giant insects and protecting underground gardens, through the use of magical artifacts.</p>
+          <div class="links">
+            <a class="btn btn-store" href="https://store.steampowered.com/app/1775750/">Steam<svg class="arrow" width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5"/></svg></a>
+          </div>
+        </article>
+
+        <article class="game">
+          <div class="frame zoom"><img src="assets/images/rabisco.jpg" alt="Rabisco key art" loading="lazy"></div>
+          <span class="status">Out now · 2019</span>
+          <h3>Rabisco</h3>
+          <p>Help Ms. Rabisco to find the moon’s lost stars and bring back the light, in this cute but dangerous world, inspired by the World’s Hardest Game.</p>
+          <div class="links">
+            <a class="btn btn-store" href="https://store.steampowered.com/app/1125860/">Steam<svg class="arrow" width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5"/></svg></a>
+          </div>
+        </article>
+
+        <article class="game">
+          <div class="frame zoom"><img src="assets/images/duck-souls.jpg" alt="Duck Souls key art" loading="lazy"></div>
+          <span class="status">Out now · 2018</span>
+          <h3>Duck Souls</h3>
+          <p>Duck Souls is a fast-paced, action platformer about a little duck with an incredible skill to dash and a mission: find all the lost eggs in order to save his species.</p>
+          <div class="links">
+            <a class="btn btn-store" href="https://store.steampowered.com/app/917290/">Steam<svg class="arrow" width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5"/></svg></a>
+          </div>
+        </article>
+
+        <article class="game">
+          <div class="frame zoom"><img src="assets/images/pinkman.jpg" alt="Pinkman key art" loading="lazy"></div>
+          <span class="status">Out now · 2017</span>
+          <h3>Pinkman</h3>
+          <p>Pinkman is a fast-paced, action platformer about a lost man with pink skin and an incredible skill to fart.</p>
+          <div class="links">
+            <a class="btn btn-store" href="https://store.steampowered.com/app/516480/">Steam<svg class="arrow" width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section divided faq" id="faq" aria-labelledby="faq-title">
+      <div class="section-head faq-intro">
+        <p class="label"><span class="num">04</span> / FAQ</p>
+        <h2 class="heading" id="faq-title">Questions</h2>
+        <p>Something else on your mind? Write to us.</p>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>
+            <span>Are your games free-to-play?</span>
+            <svg class="faq-plus" viewBox="0 0 20 20" fill="none" stroke="#3DBE83" stroke-width="2" aria-hidden="true"><path d="M10 3v14M3 10h14"/></svg>
+          </summary>
+          <p>No. Our games are premium: you buy them once and that’s it.</p>
+        </details>
+        <details>
+          <summary>
+            <span>What do you make your games with?</span>
+            <svg class="faq-plus" viewBox="0 0 20 20" fill="none" stroke="#3DBE83" stroke-width="2" aria-hidden="true"><path d="M10 3v14M3 10h14"/></svg>
+          </summary>
+          <p>Blender for every model and Godot for everything else.</p>
+        </details>
+        <details>
+          <summary>
+            <span>Which platforms are your games on?</span>
+            <svg class="faq-plus" viewBox="0 0 20 20" fill="none" stroke="#3DBE83" stroke-width="2" aria-hidden="true"><path d="M10 3v14M3 10h14"/></svg>
+          </summary>
+          <p>It depends on the game. Every game above has buttons for the stores where you can find it.</p>
+        </details>
+        <details>
+          <summary>
+            <span>Can I stream or make videos of your games?</span>
+            <svg class="faq-plus" viewBox="0 0 20 20" fill="none" stroke="#3DBE83" stroke-width="2" aria-hidden="true"><path d="M10 3v14M3 10h14"/></svg>
+          </summary>
+          <p>Yes, please do. You can stream, record and share videos of any of our games, monetised or not. A link to the game in your description is always appreciated.</p>
+        </details>
+        <details>
+          <summary>
+            <span>I found a bug. Where do I report it?</span>
+            <svg class="faq-plus" viewBox="0 0 20 20" fill="none" stroke="#3DBE83" stroke-width="2" aria-hidden="true"><path d="M10 3v14M3 10h14"/></svg>
+          </summary>
+          <p>Send us an email with the game, your platform and what happened. The address is just below.</p>
+        </details>
+        <details>
+          <summary>
+            <span>Are you hiring?</span>
+            <svg class="faq-plus" viewBox="0 0 20 20" fill="none" stroke="#3DBE83" stroke-width="2" aria-hidden="true"><path d="M10 3v14M3 10h14"/></svg>
+          </summary>
+          <p>Not right now. We are always happy to meet people who make games, though, so feel free to say hello.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="glow-line" aria-hidden="true"></div>
+    <div class="footer-main">
+      <div class="contact">
+        <p class="label"><span class="num">05</span> / Contact</p>
+        <a class="mail" href="mailto:hello@viridinostudios.com">hello@viridinostudios.com</a>
+      </div>
+      <!-- Placeholder links: these point to each site's home page until the studio's own pages exist. -->
+      <div class="links">
+        <a class="btn btn-social" href="https://www.youtube.com/">YouTube<svg class="arrow" width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5"/></svg></a>
+        <a class="btn btn-social" href="https://bsky.app/">Bluesky<svg class="arrow" width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5"/></svg></a>
+        <a class="btn btn-social" href="https://discord.com/">Discord<svg class="arrow" width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Viridino Studios</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
 </body>
 </html>
